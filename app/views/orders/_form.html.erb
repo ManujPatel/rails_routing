@@ -1,0 +1,12 @@
+
+<%= form_with(model: [@product, @order], local: true) do |form| %>
+<p>
+  <%= form.label :Quantity %><br>
+  <%= form.number_field :quantity %>
+</p>
+<p>
+  <%= form.label :Product_id %><br>
+  <%= form.select :product_id, Product.all.map { |t| [t.title, t.id] } %>
+</p>
+  <%= form.submit %>
+<%end%>
