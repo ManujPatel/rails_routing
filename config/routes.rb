@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  #get 'customers/index'
+  #get 'customers/new'
+  #get 'customers/create'
+  #get 'customers/show'
+  #get 'customers/edit'
+  #get 'customers/update'
+  #get 'customers/destroy'
   #get 'orders/index'
   #get 'orders/show'
   #get 'orders/update'
@@ -14,6 +21,17 @@ Rails.application.routes.draw do
   root "products#index"
   resources :products do
     resources :orders
+  end
+  namespace :business do
+    resources :customers, only: [:index, :new, :create, :edit ,:update] do
+      member do
+        get 'preview'
+        match 'delete_customer', via: [:delete]
+      end
+      collection do
+        get 'search'
+      end
+    end
   end
   # Defines the root path route ("/")
   # root "articles#index"
