@@ -1,0 +1,23 @@
+<h1>Products#index</h1>
+<table border ="2px"> 
+  <th>Title</th>
+  <th>Show</th>
+  <th>Edit</th>
+  <th>Orders</th>
+  
+  <% @products.each do |product| %>
+  <tr>  
+    <td><%= product.title %></td>
+    <td><%= button_to "Show",product_path(product),method: :get %></td>
+    <td><%= button_to "Edit",edit_product_path(product),method: :get %></td>
+    <td><%= button_to "Orders",product_orders_path(product),method: :get %></td>
+  </tr>
+  <% end %>
+</table>
+
+<div>
+  <%= button_to "Add New product",new_product_path, method: :get %>
+</div>
+<div>
+  <%= button_to "View Customers",business_customers_path,method: :get %>
+</div>

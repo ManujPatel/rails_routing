@@ -1,0 +1,12 @@
+<table border="2px"> 
+  <th>Name</th>
+  <th>Email</th>
+  <th>Phone_number</th>
+  <tr>  
+    <td><%= @customer.fname %> <%= @customer.lname %></td>
+    <td><%= @customer.email %></td>
+    <td><%= @customer.phone_number %></td>
+  </tr>
+</table>
+<%= button_to "Edit",edit_business_customer_path(@customer),method: :get %>
+<%= button_to "Delete",delete_customer_business_customer_path(@customer),method: :delete %>

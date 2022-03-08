@@ -1,0 +1,15 @@
+<h1>Orders#show</h1>
+<table> 
+  <th>Title</th>
+  <th>Quantity</th>
+  <th>Total_price</th>
+  <th>Edit</th>
+  <th>Delete</th>
+  <tr>  
+    <td><%= @order.product.title %></td>
+    <td><%= @order.quantity %></td>
+    <td><%= @order.total_price %></td>
+    <td><%= button_to "Edit", edit_product_order_path(@product,@order),method: :get %></td>
+    <td><%= button_to "Delete", product_order_path(@product,@order),method: :delete %></td>
+  </tr>
+</table>

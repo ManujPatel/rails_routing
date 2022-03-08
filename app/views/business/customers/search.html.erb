@@ -1,0 +1,27 @@
+<table>
+  <th>Search Customer</th>
+  <%= form_tag search_business_customers_path, method: :get do  %>
+
+  <tr>
+    <td><%= text_field_tag :search, params[:search] %></td>
+    <td><%= submit_tag "search" %></td>
+  </tr>
+  <% end %>
+
+</table>
+
+<table>
+    <th>First_name</th>
+    <th>Last_name</th>
+    <th>Email</th>
+    <th>Phone_number</th>
+
+    <% @customer.each do |customer| %>
+        <tr>
+        <td><%= customer.fname %></td>
+        <td><%= customer.lname %></td>
+        <td><%= customer.email %></td>
+        <td><%= customer.phone_number %></td>
+        </tr>
+    <% end %>
+</table>

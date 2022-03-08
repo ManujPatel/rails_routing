@@ -1,0 +1,21 @@
+<h1>Orders#index</h1>
+<table border="2px"> 
+  <th>Title</th>
+  <th>Quantity</th>
+  <th>Show</th>
+  <th>Edit</th>
+  <th>Delete</th>
+  
+  <% @orders.each do |order| %>
+  <tr>  
+    <td><%= order.product.title %></td>
+    <td><%= order.quantity %></td>
+    <td><%= button_to "Show",product_order_path(@product,order),method: :get %></td>
+    <td><%= button_to "Edit",edit_product_order_path(@product,order),method: :get %></td>
+    <td><%= button_to "Delete",product_order_path(@product,order),method: :delete %></td>
+  </tr>
+  <% end %>
+</table>
+<p >
+  <%= button_to "Add New Order",new_product_order_path(@product), method: :get %>
+</p>

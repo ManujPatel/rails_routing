@@ -1,0 +1,27 @@
+<%= form_with model: [:business, @customer] do |form| %>
+
+    <p>
+      <%= form.label :Fname %><br>
+      <%= form.text_field :fname %>
+    </p>
+    
+    <p>
+      <%= form.label :Lname %><br>
+      <%= form.text_field :lname %>
+    </p>
+    
+    <p>
+      <%= form.label :Email %><br>
+      <%= form.email_field :email %>
+    </p>
+    
+    <p>
+      <%= form.label :Phone_number %><br>
+      <%= form.number_field :phone_number %>
+    </p>
+    
+    <p>
+      <%= form.submit  %>
+    </p>
+    
+    <% end %>
